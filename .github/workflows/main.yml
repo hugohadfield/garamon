@@ -61,6 +61,10 @@ jobs:
           python setup.py install --user
         working-directory: ${{ github.workspace }}/output/garamon_c3ga/
 
+      - name: Install clifford to test against
+        run: |
+          pip install clifford --user
+
       - name: Run Python tests
         run: |
           python ${{ github.workspace }}/tests/python/c3ga.py
