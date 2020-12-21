@@ -48,13 +48,13 @@ jobs:
           mkdir $GITHUB_WORKSPACE/output/
           $GITHUB_WORKSPACE/build/garamon_generator $GITHUB_WORKSPACE/conf/c3ga.conf $GITHUB_WORKSPACE/output/ $GITHUB_WORKSPACE/data/
     
-      - name: 'Tar files'
+      - name: 'Ls files to check code has been generated in the right place'
         run: ls -R ${{ github.workspace }}
     
-#       - uses: actions/upload-artifact@v2
-#         with:
-#           name: generated_code
-#           path: ${{ github.workspace }}/my_files.tar
+      - uses: actions/upload-artifact@v2
+        with:
+          name: generated_code
+          path: ${{ github.workspace }}/output/
       
 #       - name: Run the python installer
 #         run: |
