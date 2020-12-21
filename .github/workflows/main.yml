@@ -52,7 +52,9 @@ jobs:
         run: ls -R ${{ github.workspace }}
       
       - name: Ensure pybind11 is installed
-        run: pip install "pybind11[global]"
+        run: |
+          pip install "pybind11[global]"
+          echo "/home/runner/.local/bin" >> $GITHUB_PATH
       
       - name: Run the python installer
         run: |
