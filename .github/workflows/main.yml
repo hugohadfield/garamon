@@ -28,6 +28,14 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
+      
+      - name: Install Eigen
+        run: |
+          mkdir $GITHUB_WORKSPACE/eigen/
+          git clone https://gitlab.com/libeigen/eigen.git $GITHUB_WORKSPACE/eigen/
+          mkdir $GITHUB_WORKSPACE/eigen/build/
+          cmake -S $GITHUB_WORKSPACE/eigen/ -B $GITHUB_WORKSPACE/eigen/build/
+          make install -C $GITHUB_WORKSPACE/eigen/build/
 
       - name: Build the Garamon generator
         run: |
