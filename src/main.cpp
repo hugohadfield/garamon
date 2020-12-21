@@ -25,9 +25,9 @@
 int main(int argc, char** argv){
 
     // check the program arguments
-    if(argc != 2){
-        std::cerr << "usage: " << argv[0] << " file.conf" << std::endl;
-        std::cerr << "where 'file.conf' is the file that defines your algebra." << std::endl;
+    if(argc <2){
+        std::cerr << "usage: " << argv[0] << " file.conf" << " output_directory" << std::endl;
+        std::cerr << "where 'file.conf' is the file that defines your algebra and (optionally) output_directory is location the generated code will be placed" << std::endl;
         return EXIT_FAILURE;;
     }
 
@@ -35,7 +35,13 @@ int main(int argc, char** argv){
     const std::string configurationFilesDirectory = argv[1];
     
     const std::string templateDataDirectory = "../data/";
-    const std::string outputDirectory = "output/";
+    
+    if (argc == 3){
+        const std::string outputDirectory = argv[2];
+    }
+    else{
+        const std::string outputDirectory = "output/";
+    }
 
     // read the configuration data
     std::cout << "load meta data ..." << std::endl;
