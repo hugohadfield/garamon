@@ -49,23 +49,23 @@ jobs:
           sudo $GITHUB_WORKSPACE/build/garamon_generator $GITHUB_WORKSPACE/conf/c3ga.conf $GITHUB_WORKSPACE/output/ $GITHUB_WORKSPACE/data/
     
       - name: 'Tar files'
-        run: tar -cvf my_files.tar $GITHUB_WORKSPACE
+        run: ls -R ${{ github.workspace }}
     
-      - uses: actions/upload-artifact@v2
-        with:
-          name: generated_code
-          path: ${{ github.workspace }}/my_files.tar
+#       - uses: actions/upload-artifact@v2
+#         with:
+#           name: generated_code
+#           path: ${{ github.workspace }}/my_files.tar
       
-      - name: Run the python installer
-        run: |
-          sudo python setup.py install   
-        working-directory: $GITHUB_WORKSPACE/output/garamon_c3ga 
+#       - name: Run the python installer
+#         run: |
+#           sudo python setup.py install   
+#         working-directory: $GITHUB_WORKSPACE/output/garamon_c3ga 
           
-      - name: cat setup.py to see what is happening
-        run: |
-          cat $GITHUB_WORKSPACE/output/garamon_c3ga/setup.py
+#       - name: cat setup.py to see what is happening
+#         run: |
+#           cat $GITHUB_WORKSPACE/output/garamon_c3ga/setup.py
         
-      - name: Run Python tests
-        run: |
-          python -c "import c3ga; print(dir(c3ga))"
+#       - name: Run Python tests
+#         run: |
+#           python -c "import c3ga; print(dir(c3ga))"
 
