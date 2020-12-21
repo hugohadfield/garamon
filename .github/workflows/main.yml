@@ -45,5 +45,5 @@ jobs:
           
       - name: Generate c3ga
         run: |
-          $GITHUB_WORKSPACE/build/garamon_generator $GITHUB_WORKSPACE/conf/c3ga.conf
+          sudo $GITHUB_WORKSPACE/build/garamon_generator $GITHUB_WORKSPACE/conf/c3ga.conf
           
