@@ -52,7 +52,7 @@ jobs:
         run: ls -R ${{ github.workspace }}
       
       - name: Ensure pybind11 is installed
-        run: sudo apt-get install python-pybind11
+        run: pip install "pybind11[global]"
       
       - name: Run the python installer
         run: |
