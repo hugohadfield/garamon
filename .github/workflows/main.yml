@@ -48,8 +48,11 @@ jobs:
           mkdir $GITHUB_WORKSPACE/output/
           $GITHUB_WORKSPACE/build/garamon_generator $GITHUB_WORKSPACE/conf/c3ga.conf $GITHUB_WORKSPACE/output/ $GITHUB_WORKSPACE/data/
     
-      - name: 'Ls files to check code has been generated in the right place'
+      - name: Ls files to check code has been generated in the right place
         run: ls -R ${{ github.workspace }}
+      
+      - name: Ensure pybind11 is installed
+        run: sudo apt-get install python-pybind11
       
       - name: Run the python installer
         run: |
