@@ -50,4 +50,4 @@ jobs:
           
       - name: Run the python installer
         run: |
-          python $GITHUB_WORKSPACE/c3ga/garamon_c3ga/setup.py install         
+          sudo python $GITHUB_WORKSPACE/c3ga/garamon_c3ga/setup.py install         
