@@ -1,7 +1,7 @@
 from c3ga_py import *
 from clifford.g3c import layout as g3c
 from clifford.g3c import eo as g3c_eo
-from clifford.g3c import einf as g3c_inf
+from clifford.g3c import einf as g3c_einf
 
 
 def test_basics():
