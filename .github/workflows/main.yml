@@ -51,7 +51,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: generated_code
-          path: $GITHUB_WORKSPACE
+          path: ${{ github.workspace }}
       
       - name: Run the python installer
         run: |
