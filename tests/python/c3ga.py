@@ -27,16 +27,27 @@ def test_basics():
   print("mv2 clifford: ", mv2_clifford)
 
   # some products
+  # Garamon version
+  print('Garamon')
   print("outer product     : ", (mv1 ^ mv2) )
   print("inner product     : ", (mv1 | mv2) )
   print("geometric product     : ", (mv1 * mv2) )
 
-
+  # Clifford version
+  print('Clifford')
+  print("outer product     : ", (mv1_clifford ^ mv2_clifford) )
+  print("inner product     : ", (mv1_clifford | mv2_clifford) )
+  print("geometric product     : ", (mv1_clifford * mv2_clifford) )
+  
   # some tools
+  # Garamon version
+  print('Garamon')
   print("grade : ", mv1.grade())
   print("norm : ", mv1.norm())
-  print("norm : ", mv2.grade())
-
+  
+  print('Clifford')
+  print("norm : ", abs(mv1_clifford))
+  
   
 if __name__ == '__main__':
   test_basics()
