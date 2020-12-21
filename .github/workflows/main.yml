@@ -58,7 +58,7 @@ jobs:
       
       - name: Run the python installer
         run: |
-          python setup.py install   
+          pip install .  
         working-directory: ${{ github.workspace }}/output/garamon_c3ga/
 
       - name: Run Python tests
