@@ -48,3 +48,6 @@ jobs:
           mkdir $GITHUB_WORKSPACE/c3ga/
           sudo $GITHUB_WORKSPACE/build/garamon_generator $GITHUB_WORKSPACE/conf/c3ga.conf $GITHUB_WORKSPACE/c3ga/ $GITHUB_WORKSPACE/data/
           
+      - name: Run the python installer
+        run: |
+          python $GITHUB_WORKSPACE/c3ga/garamon_c3ga/setup.py install         
