@@ -56,16 +56,12 @@ jobs:
           name: generated_code
           path: ${{ github.workspace }}/output/
       
-#       - name: Run the python installer
-#         run: |
-#           sudo python setup.py install   
-#         working-directory: $GITHUB_WORKSPACE/output/garamon_c3ga 
-          
-#       - name: cat setup.py to see what is happening
-#         run: |
-#           cat $GITHUB_WORKSPACE/output/garamon_c3ga/setup.py
-        
-#       - name: Run Python tests
-#         run: |
-#           python -c "import c3ga; print(dir(c3ga))"
+      - name: Run the python installer
+        run: |
+          sudo python setup.py install   
+        working-directory: $GITHUB_WORKSPACE/output/garamon_c3ga 
+
+      - name: Run Python tests
+        run: |
+          python -c "import c3ga_py; print(dir(c3ga_py))"
 
