@@ -45,7 +45,7 @@ jobs:
           
       - name: Generate c3ga
         run: |
-          mkdir $GITHUB_WORKSPACE/c3ga/
+          mkdir $GITHUB_WORKSPACE/output/
           sudo $GITHUB_WORKSPACE/build/garamon_generator $GITHUB_WORKSPACE/conf/c3ga.conf $GITHUB_WORKSPACE/output/ $GITHUB_WORKSPACE/data/
           
       - name: Run the python installer
