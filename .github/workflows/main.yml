@@ -58,8 +58,8 @@ jobs:
       
       - name: Run the python installer
         run: |
-          sudo python setup.py install   
-        working-directory: $GITHUB_WORKSPACE/output/garamon_c3ga 
+          python setup.py install   
+        working-directory: ${{ github.workspace }}/output/garamon_c3ga/
 
       - name: Run Python tests
         run: |
