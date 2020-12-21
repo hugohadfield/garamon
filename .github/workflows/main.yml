@@ -35,7 +35,7 @@ jobs:
           git clone https://gitlab.com/libeigen/eigen.git $GITHUB_WORKSPACE/eigen/
           mkdir $GITHUB_WORKSPACE/eigen/build/
           cmake -S $GITHUB_WORKSPACE/eigen/ -B $GITHUB_WORKSPACE/eigen/build/
-          make install -C $GITHUB_WORKSPACE/eigen/build/
+          sudo make install -C $GITHUB_WORKSPACE/eigen/build/
 
       - name: Build the Garamon generator
         run: |
