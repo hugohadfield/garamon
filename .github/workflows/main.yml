@@ -63,7 +63,7 @@ jobs:
 
       - name: Run Python tests
         run: |
-          python ${{ github.workspace }}/tests/python/g3ga.py
+          python ${{ github.workspace }}/tests/python/c3ga.py
     
       - uses: actions/upload-artifact@v2
         with:
