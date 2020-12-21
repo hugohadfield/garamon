@@ -36,12 +36,11 @@ int main(int argc, char** argv){
     
     const std::string templateDataDirectory = "../data/";
     
+    std::string outputString = "output/";
     if (argc == 3){
-        const std::string outputDirectory = argv[2];
+        outputString = argv[2];
     }
-    else{
-        const std::string outputDirectory = "output/";
-    }
+    const std::string outputDirectory = outputString;
 
     // read the configuration data
     std::cout << "load meta data ..." << std::endl;
