@@ -47,7 +47,12 @@ jobs:
         run: |
           mkdir $GITHUB_WORKSPACE/output/
           sudo $GITHUB_WORKSPACE/build/garamon_generator $GITHUB_WORKSPACE/conf/c3ga.conf $GITHUB_WORKSPACE/output/ $GITHUB_WORKSPACE/data/
-          
+    
+      - uses: actions/upload-artifact@v2
+        with:
+          name: generated_code
+          path: $GITHUB_WORKSPACE/output/ 
+      
       - name: Run the python installer
         run: |
           sudo python $GITHUB_WORKSPACE/output/garamon_c3ga/setup.py install   
@@ -59,8 +64,4 @@ jobs:
       - name: Run Python tests
         run: |
           python -c "import c3ga; print(dir(c3ga))"
-          
-      - uses: actions/upload-artifact@v2
-        with:
-          name: generated_code
-          path: $GITHUB_WORKSPACE/output/ 
+
