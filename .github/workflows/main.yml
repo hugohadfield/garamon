@@ -50,18 +50,19 @@ jobs:
     
       - name: 'Ls files to check code has been generated in the right place'
         run: ls -R ${{ github.workspace }}
+      
+      - name: Run the python installer
+        run: |
+          python setup.py install --user
+        working-directory: ${{ github.workspace }}/output/garamon_c3ga/
+
+      - name: Run Python tests
+        run: |
+          python -c "import c3ga_py; print(dir(c3ga_py))"
     
       - uses: actions/upload-artifact@v2
         with:
           name: generated_code
           path: ${{ github.workspace }}/output/
       
-      - name: Run the python installer
-        run: |
-          pip install . --user
-        working-directory: ${{ github.workspace }}/output/garamon_c3ga/
-
-      - name: Run Python tests
-        run: |
-          python -c "import c3ga_py; print(dir(c3ga_py))"
 
