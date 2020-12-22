@@ -42,7 +42,7 @@ jobs:
       - name: Generate code
         run: |
           mkdir $GITHUB_WORKSPACE/output/
-          $GITHUB_WORKSPACE/build/garamon_generator ${{ github.workspace }}/conf/c3ga.conf $GITHUB_WORKSPACE/output/ $GITHUB_WORKSPACE/data
+          $GITHUB_WORKSPACE/build/garamon_generator ${{ github.workspace }}/conf/c3ga.conf $GITHUB_WORKSPACE/output/ $GITHUB_WORKSPACE/data/
       - name: Ensure pybind11 is installed
         run: |
           pip install "pybind11[global]"
