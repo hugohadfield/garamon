@@ -47,7 +47,7 @@ jobs:
         run: |
           mkdir $GITHUB_WORKSPACE/output/
           for conf_file in $GITHUB_WORKSPACE/conf/*; do
-            $GITHUB_WORKSPACE/build/garamon_generator conf_file $GITHUB_WORKSPACE/output/ $GITHUB_WORKSPACE/data/
+            $GITHUB_WORKSPACE/build/garamon_generator $(conf_file) $GITHUB_WORKSPACE/output/ $GITHUB_WORKSPACE/data/
           done
           
       - name: Ls files to check code has been generated in the right place
